@@ -36,4 +36,4 @@ python3 scripts/run_harness.py
 
 解释阶段的披露图只画影响技能工作方式的模块；普通 README、License、Changelog 不占节点。原文列出多条触发口令或分支时，图格逐项写明具体内容与效果，避免只写数量或字段清单。
 
-许可见 [MIT License](LICENSE)。本技能只抽象方法；使用第三方代码或实质文本时，仍须单独核对其许可和归属。
+许可见 [MIT License](LICENSE.md)。本技能只抽象方法；使用第三方代码或实质文本时，仍须单独核对其许可和归属。
