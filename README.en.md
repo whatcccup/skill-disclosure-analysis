@@ -36,4 +36,4 @@ This checks the explanation core against its current baseline, package structure
 
 The disclosure diagram shows modules that affect the skill's work. Ordinary README, License, and Changelog files stay out of the graph. When a source enumerates trigger phrases or branches, the cards spell out each item and its effect instead of merely reporting a count.
 
-Licensed under [MIT](LICENSE). If you reuse third-party code or substantial text, review its license and attribution separately.
+Licensed under [MIT](LICENSE.md). If you reuse third-party code or substantial text, review its license and attribution separately.
