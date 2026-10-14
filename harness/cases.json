@@ -1,0 +1,50 @@
+[
+  {
+    "id": "explain-only",
+    "request": "只分析我提供的 SKILL.md 和关联文件，做披露树；不要运行、修改或迁移。",
+    "expected_stage": "explain",
+    "must_observe": ["弹窗询问简单或完整交付", "解释来源与未知项", "不进入拆分或升级", "原包只读"]
+  },
+  {
+    "id": "explain-no-answer",
+    "request": "请解释这个 Skill；弹窗没有收到答复。原包含四句具体中文触发口令，另有只写许可和版本历史的文件。",
+    "expected_stage": "explain",
+    "must_observe": ["默认完整交付", "主报告 Markdown 和 draw.io 图", "四句口令逐项呈现", "无关 README、License、Changelog 不进披露树图"]
+  },
+  {
+    "id": "analysis-location-unknown",
+    "request": "请完整分析这个已安装的 Skill，但没有指定项目，当前也无法确定分析结果应存放在哪里。",
+    "expected_stage": "explain",
+    "must_observe": ["弹窗请用户提供分析输出文件夹", "得到目录前不写分析文件", "不默认写入 skills 安装目录"]
+  },
+  {
+    "id": "split-rules",
+    "request": "把作者规则分成四类，每项写七字段映射，并给通用骨架。",
+    "expected_stage": "split",
+    "must_observe": ["原子规则四类并说明读者后续动作", "每项证据位置写完整文档名、Markdown 文件链接和文档内定位线索", "链接可打开源文件，精确跳转受限时明示", "至少一个原规则还原输入、判断、动作和可观察效果", "骨架注明适用任务族和不适用条件", "候选骨架含质检、确认、失败、安全", "不生成派生 SKILL.md"]
+  },
+  {
+    "id": "split-overcompressed-example",
+    "request": "来源技能说先找主轴再挂分支。请拆分给学习者，并判断它能否作为任意语义提取任务的通用骨架。",
+    "expected_stage": "split",
+    "must_observe": ["指出原技能中图示与纯文字来源的不同输入", "说明主轴、旁注的判断和防止的错误", "给出学习者在新场景中的下一步动作和验证", "不把主轴法宣称为所有语义提取的通式"]
+  },
+  {
+    "id": "upgrade-local-timeline-layout",
+    "request": "只保留原案件可视化技能的时间轴能力，把左右对称卡片改成左侧时间轴和右侧角色泳道；保留来源核对与人工确认。",
+    "expected_stage": "upgrade-review",
+    "must_observe": ["选局部改造并以原时间轴能力链为起点", "追踪触发、预检、抽取、数据合同、渲染、质检和确认的依赖", "列保留、替换及受影响文件", "不强迫使用增量更新骨架", "用户确认改造映射前不生成派生 SKILL.md"]
+  },
+  {
+    "id": "upgrade-with-gaps",
+    "request": "把通用骨架做成我的技能，但还没有给出交付格式、归档位置和真实案例。",
+    "expected_stage": "upgrade-review",
+    "must_observe": ["先列骨架到用户规则映射", "仅问阻止下一步的缺口", "不脑补缺失参数", "未确认不生成 SKILL.md"]
+  },
+  {
+    "id": "upgrade-confirmed",
+    "request": "我确认改造映射、输入来源和工具范围；请生成新技能并用指定真实任务演练。",
+    "expected_stage": "upgrade-build",
+    "must_observe": ["只在确认范围生成", "原作者私密信息与品牌不迁移", "桌面验收与静态检查分开", "未测项如实报告"]
+  }
+]
