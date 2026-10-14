@@ -19,7 +19,7 @@ def check_explain_snapshot():
     normalized = text.replace("(../references/artifacts.md)", "(references/artifacts.md)")
     normalized = normalized.replace("(../references/evidence.md)", "(references/evidence.md)")
     normalized = normalized.replace("`../scripts/render_disclosure.py`", "`scripts/render_disclosure.py`")
-    expected = (ROOT / "harness/explain-body.sha256").read_text().strip()
+    expected = (ROOT / "harness/explain-body.sha256.txt").read_text().strip()
     actual = hashlib.sha256(normalized.encode("utf-8")).hexdigest()
     if actual != expected:
         raise AssertionError("explain core differs from the approved baseline")
@@ -28,7 +28,7 @@ def check_explain_snapshot():
 def check_package():
     required = ["SKILL.md", "subskills/explain.md", "subskills/split.md", "subskills/upgrade.md",
                 "references/artifacts.md", "references/evidence.md", "scripts/render_disclosure.py",
-                "README.md", "README.en.md", "LICENSE"]
+                "README.md", "README.en.md", "LICENSE.md", "harness/explain-body.sha256.txt"]
     for name in required:
         if not (ROOT / name).is_file():
             raise AssertionError(f"missing {name}")
